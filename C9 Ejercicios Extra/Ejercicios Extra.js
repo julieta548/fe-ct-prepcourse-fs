@@ -6,7 +6,17 @@ function deObjetoAarray(objeto) {
   // Estos elementos debe ser cada par clave:valor del objeto recibido.
   // [EJEMPLO]: {D: 1, B: 2, C: 3} ---> [['D', 1], ['B', 2], ['C', 3]].
   // Tu código:
+
+  var arregloPadre = [];
+
+  for (var key in objeto) {
+    var valor = objeto[key];
+    arregloPadre.push([key, valor]);
+  }
+  console.log(arregloPadre);
 }
+
+deObjetoAarray({ a: 1, b: 2, c: 3 });
 
 function numberOfCharacters(string) {
   // La función recibe un string. Debes recorrerlo y retornar un objeto donde cada propiedad es una de las
@@ -14,7 +24,29 @@ function numberOfCharacters(string) {
   // Las letras deben estar en orden alfabético.
   // [EJEMPLO]: "adsjfdsfsfjsdjfhacabcsbajda" ---> { a: 5, b: 2, c: 2, d: 4, f: 4, h:1, j: 4, s: 5 }
   // Tu código:
+
+  var letras = string.split("");
+  console.log(letras);
+
+  var obj = {};
+  var contador = {};
+  // if (/[a-z]/.test(letra))
+
+  for (let i = 0; i < string.length; i++) {
+    var letra = string[i].toLowerCase();
+    if (/[a-z]/.test(letra)) {
+      if (contador[letra]) {
+        contador[letra]++;
+      } else {
+        contador[letra] = 1;
+      }
+    }
+  }
+  console.log(contador);
+  return contador;
 }
+
+numberOfCharacters("holaa");
 
 function capToFront(string) {
   // Recibes un string con algunas letras en mayúscula y otras en minúscula.
@@ -22,20 +54,63 @@ function capToFront(string) {
   // Retornar el string.
   // [EJEMPLO]: soyHENRY ---> HENRYsoy
   // Tu código:
+
+  var mayusculas = "";
+  var minusculas = "";
+
+  for (let i = 0; i < string.length; i++) {
+    const letra = string[i];
+    if (/[A-Z]/.test(letra)) {
+      mayusculas = mayusculas.concat(letra);
+      console.log(mayusculas);
+    }
+
+    if (/[a-z]/.test(letra)) {
+      minusculas = minusculas.concat(letra);
+      console.log(minusculas);
+    }
+  }
+
+  var nuevoString = mayusculas.concat(minusculas);
+  console.log(nuevoString);
+  return nuevoString;
 }
+
+capToFront("juLiEta");
 
 function asAmirror(frase) {
   // Recibes una frase. Tu tarea es retornar un nuevo string en el que el orden de las palabras sea el mismo.
   // La diferencia es que cada palabra estará escrita al inverso.
   // [EJEMPLO]: "The Henry Challenge is close!"  ---> "ehT yrneH egnellahC si !esolc"
   // Tu código:
+
+
 }
+
+asAmirror("hola a todos");
 
 function capicua(numero) {
   // Si el número que recibes es capicúa debes retornar el string: "Es capicua".
   // Caso contrario: "No es capicua".
   // Tu código:
+
+  numero = 333;
+
+  var str = numero.toString();
+  console.log(str);
+
+  if (str.length % 2 == 0) {
+    for (let i = 0; i < str.length / 2; i++) {
+      const numero = str[i];
+      
+    }
+  } else if (str.length % 2 != 0){
+
+  }
+
 }
+
+capicua('menem');
 
 function deleteAbc(string) {
   // Tu tarea es eliminar las letras "a", "b" y "c" del string recibido.

@@ -3,6 +3,19 @@ function esFechaValida(fecha) {
   // Comprueba si este corresponde a una fecha válida.
   // Si es así, retorna true, sino retorna false.
   // Tu código:
+
+  var fechaDate = new Date();
+  console.log(fechaDate);
+  var fechaString = "";
+ 
+
+  if (typeof fecha == typeof fechaString) {
+    return false;
+  } else if (Date.parse(fecha)) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 module.exports = esFechaValida;
